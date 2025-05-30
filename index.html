@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loud - The loudest always win</title>
+    <meta name="description" content="Check your $LOUD token allocation. Rewards distributed to top mindshare contributors weekly, forever.">
+    <meta name="author" content="0x_ultra">
+    <meta name="keywords" content="crypto,mindshare,leaderboard,loud,rewards,solana,twitter,token,allocation">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://www.stayloud.io/favicon.ico" type="image/x-icon" sizes="16x16">
+</head>
+<body class="__className_d65c78">
+    <main class="min-h-screen bg-background">
+        <div class="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
+            <!-- Header -->
+            <header class="border-b border-gray-800 bg-black/50 backdrop-blur-sm sticky top-0 z-50">
+                <div class="container mx-auto px-4 lg:px-6 py-4">
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <div class="relative w-10 h-10 rounded-xl overflow-hidden">
+                                <img src="./images/cryptologo.jpeg" alt="$LOUD" class="w-full h-full object-cover" />
+                            </div>
+                            <div>
+                                <h1 class="text-2xl font-black text-white">Loud</h1>
+                                <p class="text-sm text-gray-400 leading-none">The loudest always win</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="container mx-auto px-4 lg:px-6 py-8">
+                <!-- Hero Section -->
+                <div class="text-center mb-12">
+                    <div class="relative">
+                        <h2 class="text-5xl lg:text-7xl font-black bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent mb-4">$LOUD Allocation</h2>
+                        <div class="absolute -inset-1 bg-gradient-to-r from-green-500/20 via-transparent to-green-500/20 blur-xl rounded-full"></div>
+                    </div>
+                    <p class="text-xl lg:text-2xl text-gray-300 mb-6 max-w-3xl mx-auto">
+                        <span>Check your </span><span class="text-green-400 font-black">$LOUD</span><span> token allocation</span>
+                    </p>
+                    <div class="flex items-center justify-center gap-1.5 text-sm text-gray-500 flex-wrap">
+                        <span>Rewards for the loudest contributors</span>
+                        <span class="text-gray-600">&nbsp;•&nbsp;</span>
+                        <!-- <span>Powered by</span>
+                        <a href="https://kaito.ai" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-white transition-colors font-medium">
+                            <img src="https://www.stayloud.io/kaito/head%20pic-gradient.svg" alt="Kaito" class="w-4 h-4" />
+                            Kaito
+                        </a> -->
+                    </div>
+                </div>
+
+                <!-- Token Allocation Checker -->
+                <div class="max-w-4xl mx-auto mb-12">
+                    <!-- Countdown Timer -->
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 mb-8 text-center backdrop-blur-sm">
+                        <h3 class="text-2xl font-bold text-green-300 mb-2">Claim Period</h3>
+                        <p class="text-green-200/80 mb-4">Claiming starts on June 4, 2025</p>
+                        <div id="countdown" class="flex justify-center gap-4 text-center">
+                            <div class="bg-gray-900/50 rounded-lg p-4 min-w-[80px]">
+                                <div class="text-2xl font-black text-green-400" id="days">0</div>
+                                <div class="text-xs text-gray-400 uppercase tracking-wider">Days</div>
+                            </div>
+                            <div class="bg-gray-900/50 rounded-lg p-4 min-w-[80px]">
+                                <div class="text-2xl font-black text-green-400" id="hours">0</div>
+                                <div class="text-xs text-gray-400 uppercase tracking-wider">Hours</div>
+                            </div>
+                            <div class="bg-gray-900/50 rounded-lg p-4 min-w-[80px]">
+                                <div class="text-2xl font-black text-green-400" id="minutes">0</div>
+                                <div class="text-xs text-gray-400 uppercase tracking-wider">Minutes</div>
+                            </div>
+                            <div class="bg-gray-900/50 rounded-lg p-4 min-w-[80px]">
+                                <div class="text-2xl font-black text-green-400" id="seconds">0</div>
+                                <div class="text-xs text-gray-400 uppercase tracking-wider">Seconds</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Allocation Checker -->
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 backdrop-blur-sm">
+                        <div class="text-center mb-8">
+                            <h3 class="text-3xl font-bold text-white mb-4">Check Your Allocation</h3>
+                            <p class="text-gray-300">Enter your Solana wallet address to check your $LOUD token allocation</p>
+                        </div>
+
+                        <!-- Address Input -->
+                        <div class="max-w-2xl mx-auto mb-8">
+                            <div class="relative">
+                                <input 
+                                    type="text" 
+                                    id="wallet-address" 
+                                    placeholder="Enter your Solana wallet address..." 
+                                    class="w-full px-4 py-4 text-lg bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400/50 focus:border-green-400/50 transition-all"
+                                >
+                                <button 
+                                    id="check-allocation" 
+                                    class="absolute right-2 top-2 bottom-2 px-6 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-bold rounded-lg hover:from-green-700 hover:to-emerald-700 transition-all duration-200">
+                                    Check
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Allocation Results -->
+                        <div id="allocation-result" class="hidden">
+                            <div class="bg-gradient-to-r from-green-500/20 via-emerald-500/20 to-green-500/20 border border-green-500/30 rounded-xl p-6 text-center">
+                                <div class="flex items-center justify-center gap-2 mb-4">
+                                    <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <h4 class="text-2xl font-bold text-green-300">Eligible!</h4>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <p class="text-gray-300 mb-2">Your $LOUD Token Allocation:</p>
+                                    <div class="text-4xl font-black text-green-400 mb-2" id="allocation-amount">0</div>
+                                    <p class="text-sm text-gray-400">$LOUD Tokens</p>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                    <div class="bg-gray-900/50 rounded-lg p-4">
+                                        <div class="text-sm text-gray-400 mb-1">Wallet Address</div>
+                                        <div class="text-sm font-mono text-green-300 truncate" id="checked-address"></div>
+                                    </div>
+                                    <div class="bg-gray-900/50 rounded-lg p-4">
+                                        <div class="text-sm text-gray-400 mb-1">Claim Status</div>
+                                        <div class="text-sm font-bold text-yellow-400">Claiming Not Started</div>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-3">
+                                    <button 
+                                        class="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white font-bold py-3 px-6 rounded-lg hover:from-green-700 hover:to-emerald-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed" 
+                                        disabled>
+                                        Claim Tokens (Available June 4, 2025)
+                                    </button>
+                                    <p class="text-xs text-gray-500">
+                                        * Tokens can be claimed starting June 4, 2025. Your allocation is secured and will not change.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Error State -->
+                        <div id="allocation-error" class="hidden">
+                            <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-6 text-center">
+                                <div class="flex items-center justify-center gap-2 mb-4">
+                                    <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <h4 class="text-xl font-bold text-red-300">Invalid Address</h4>
+                                </div>
+                                <p class="text-red-200">Please enter a valid Solana wallet address.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics -->
+                <div class="max-w-4xl mx-auto mb-12">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
+                            <div class="text-3xl font-black text-green-400 mb-2">1B</div>
+                            <div class="text-sm text-gray-400">Total $LOUD Supply</div>
+                        </div>
+                        <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
+                            <div class="text-3xl font-black text-green-400 mb-2">450M</div>
+                            <div class="text-sm text-gray-400">IAO Allocation (45%)</div>
+                        </div>
+                        <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
+                            <div class="text-3xl font-black text-green-400 mb-2" id="eligible-count">154,782</div>
+                            <div class="text-sm text-gray-400">Eligible Addresses</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Original Content (Leaderboard etc.) -->
+                <div class="border-t border-gray-800 pt-12">
+                    <!-- Main Grid Layout -->
+                    <div class="grid grid-cols-1 lg:grid-cols-1 gap-6">
+                        <!-- Right Sidebar (Full width now) -->
+                        <div class="lg:col-span-1 space-y-6">
+                            <!-- What is Loud? Section -->
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 backdrop-blur-sm space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="relative">
+                                        <div class="h-12 w-12 bg-loud-gradient rounded-xl flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap h-6 w-6 text-black" aria-hidden="true">
+                                                <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a .5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="absolute -inset-1 bg-loud-gradient-glow rounded-xl blur-md -z-10"></div>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-black text-xl text-white">What is $LOUD?</h3>
+                                        <a href="https://twitter.com/stayloudio" target="_blank" rel="noopener noreferrer" class="text-sm text-green-400 hover:text-white transition-colors font-medium">@stayloudio</a>
+                                    </div>
+                                </div>
+                                <div class="space-y-4 text-gray-300">
+                                    <p class="text-sm leading-relaxed">$LOUD is a token that rewards social engagement. The louder you are about the project, the more you earn - <span class="text-green-400 font-bold">forever</span>.</p>
+                                    <p class="text-sm leading-relaxed">Token holders receive weekly SOL distributions based on their engagement and mindshare contributions to the ecosystem.</p>
+                                </div>
+                                <div class="space-y-3">
+                                    <h4 class="font-bold text-white flex items-center gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-green-400">
+                                            <path d="M16 7h6v6"></path>
+                                            <path d="m22 7-8.5 8.5-5-5L2 17"></path>
+                                        </svg>
+                                        How it Works:
+                                    </h4>
+                                    <ul class="space-y-2 text-sm text-gray-300">
+                                        <li class="flex items-start gap-3">
+                                            <div class="bullet-green"></div>
+                                            <span>Hold $LOUD tokens to earn SOL rewards</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <div class="bullet-green"></div>
+                                            <span>Engage on social media to boost rewards</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <div class="bullet-green"></div>
+                                            <span>Weekly distributions based on activity</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="pt-2 space-y-4">
+                                    <div class="text-xs text-gray-400 bg-gray-800/50 rounded-lg p-3 border border-gray-700">
+                                        <span class="text-green-400 font-medium">Note:</span> Check your allocation above and claim your tokens when available.
+                                    </div>
+                                    <div>
+                                        <button class="follow-btn bg-loud-button inline-flex items-center gap-2 px-4 py-3 text-black text-sm font-bold rounded-lg transition-all duration-200 w-full justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                                            </svg>
+                                            <span style="color: black;">Follow $LOUD</span>
+
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fee Split Section -->
+                            <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-4 backdrop-blur-sm">
+                                <div class="flex items-center gap-2 mb-4">
+                                    <div class="h-8 w-8 bg-gradient-to-br from-green-400/20 to-green-600/20 border border-green-400/30 rounded-lg flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-green-400">
+                                            <path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z"></path>
+                                            <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-black text-base text-white">Fee Split</h3>
+                                        <p class="text-xs text-gray-400">4% fee, after Meteora</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-3 mb-4">
+                                    <div class="space-y-2">
+                                        <div class="flex items-center justify-between text-sm">
+                                            <span class="text-white font-medium">Mindshare</span>
+                                            <span class="text-green-400 font-bold fee-percentage">72%</span>
+                                        </div>
+                                        <div class="fee-split-bar">
+                                            <div class="fee-split-fill-mindshare"></div>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center justify-between text-sm">
+                                            <span class="text-gray-300 font-medium">sKAITO</span>
+                                            <span class="text-gray-300 font-bold fee-percentage">18%</span>
+                                        </div>
+                                        <div class="fee-split-bar">
+                                            <div class="fee-split-fill-skaito"></div>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center justify-between text-sm">
+                                            <span class="text-gray-300 font-medium">Creator</span>
+                                            <span class="text-orange-300 font-bold fee-percentage">10%</span>
+                                        </div>
+                                        <div class="fee-split-bar">
+                                            <div class="fee-split-fill-creator"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-center gap-1.5 text-xs text-gray-500 bg-gray-800/30 rounded-lg py-2 px-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3">
+                                        <circle cx="8" cy="8" r="6"></circle>
+                                        <path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path>
+                                        <path d="M7 6h1v4"></path>
+                                        <path d="m16.71 13.88.7.71-2.82 2.82"></path>
+                                    </svg>
+                                    <span>Weekly SOL distribution</span>
+                                </div>
+                                <div class="mt-3 text-xs text-gray-600 text-center leading-relaxed">
+                                    * Fee distribution mechanics are experimental and may be adjusted based on community feedback and system performance.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Background Effects -->
+            <div class="fixed inset-0 pointer-events-none overflow-hidden">
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-green-400/5 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-green-400/3 rounded-full blur-3xl"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 
